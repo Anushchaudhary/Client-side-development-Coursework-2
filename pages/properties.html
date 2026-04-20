@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Properties | Prime Estates</title>
+    <!-- Link to CSS file - note ../ because we are inside pages folder -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-name">Prime Estates</span>
+      </div>
+      <!-- active class is on Properties this time -->
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="properties.html" class="active">Properties</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1>Our <span class="gold">Properties</span></h1>
+        <p>Discover your perfect home from our exclusive portfolio</p>
+      </div>
+    </section>
+    <!-- END PAGE HERO -->
+
+    <!-- FILTER BAR -->
+    <section class="filter-bar">
+      <div class="filter-container">
+        <div class="filter-group">
+          <label for="filterType">Property Type</label>
+          <select id="filterType">
+            <option value="all">All Types</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="manor">Manor</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterBudget">Max Budget</label>
+          <select id="filterBudget">
+            <option value="all">Any Budget</option>
+            <option value="500000">Up to £500k</option>
+            <option value="1000000">Up to £1M</option>
+            <option value="2000000">Up to £2M</option>
+            <option value="5000000">£2M+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterBeds">Bedrooms</label>
+          <select id="filterBeds">
+            <option value="all">Any</option>
+            <option value="1">1+</option>
+            <option value="3">3+</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+        <button class="btn-primary filter-btn" id="applyFilter">Search</button>
+      </div>
+    </section>
+    <!-- END FILTER BAR -->
+
+    <!-- ALL PROPERTIES SECTION -->
+    <section class="all-properties">
+      <div class="section-header">
+        <h2>Available Properties</h2>
+        <p id="resultCount">Showing 6 properties</p>
+      </div>
+
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- CARD 1 -->
+        <article
+          class="property-card"
+          data-type="house"
+          data-price="2450000"
+          data-beds="5"
+        >
+          <div class="card-image img-kensington">
+            <div class="card-badge">For Sale</div>
+          </div>
+          <div class="card-preview">
+            <h3>Kensington Villa</h3>
+            <p class="card-location">Kensington, London</p>
+            <p class="card-price">£2,450,000</p>
+            <div class="card-meta">
+              <span>5 bed</span>
+              <span>3 bath</span>
+              <span>3,200 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>5 Bedrooms</li>
+              <li>3 Bathrooms</li>
+              <li>3,200 sq ft</li>
+              <li>Private Garden</li>
+              <li>Double Garage</li>
+            </ul>
+            <p>
+              A stunning period villa in the heart of Kensington with private
+              walled garden.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article
+          class="property-card"
+          data-type="apartment"
+          data-price="875000"
+          data-beds="3"
+        >
+          <div class="card-image img-manchester">
+            <div class="card-badge featured-badge">Featured</div>
+          </div>
+          <div class="card-preview">
+            <h3>City Penthouse</h3>
+            <p class="card-location">Manchester City Centre</p>
+            <p class="card-price">£875,000</p>
+            <div class="card-meta">
+              <span>3 bed</span>
+              <span>2 bath</span>
+              <span>1,800 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>3 Bedrooms</li>
+              <li>2 Bathrooms</li>
+              <li>1,800 sq ft</li>
+              <li>Rooftop Terrace</li>
+              <li>Panoramic Views</li>
+            </ul>
+            <p>
+              Top-floor penthouse overlooking the Manchester skyline with
+              concierge service.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article
+          class="property-card"
+          data-type="manor"
+          data-price="3100000"
+          data-beds="7"
+        >
+          <div class="card-image img-cotswolds">
+            <div class="card-badge">For Sale</div>
+          </div>
+          <div class="card-preview">
+            <h3>Cotswolds Manor</h3>
+            <p class="card-location">Bourton-on-the-Water</p>
+            <p class="card-price">£3,100,000</p>
+            <div class="card-meta">
+              <span>7 bed</span>
+              <span>5 bath</span>
+              <span>5,500 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>7 Bedrooms</li>
+              <li>5 Bathrooms</li>
+              <li>5,500 sq ft</li>
+              <li>2 Acre Grounds</li>
+              <li>Swimming Pool</li>
+            </ul>
+            <p>
+              A magnificent Grade II listed manor set in 2 acres of manicured
+              grounds.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article
+          class="property-card"
+          data-type="apartment"
+          data-price="425000"
+          data-beds="2"
+        >
+          <div class="card-image img-edinburgh">
+            <div class="card-badge">For Sale</div>
+          </div>
+          <div class="card-preview">
+            <h3>New Town Apartment</h3>
+            <p class="card-location">Edinburgh New Town</p>
+            <p class="card-price">£425,000</p>
+            <div class="card-meta">
+              <span>2 bed</span>
+              <span>1 bath</span>
+              <span>950 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>2 Bedrooms</li>
+              <li>1 Bathroom</li>
+              <li>950 sq ft</li>
+              <li>Georgian Features</li>
+              <li>Private Courtyard</li>
+            </ul>
+            <p>
+              Beautifully restored Georgian apartment in Edinburgh's prestigious
+              New Town.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article
+          class="property-card"
+          data-type="house"
+          data-price="650000"
+          data-beds="4"
+        >
+          <div class="card-image img-bristol">
+            <div class="card-badge">For Sale</div>
+          </div>
+          <div class="card-preview">
+            <h3>Clifton Townhouse</h3>
+            <p class="card-location">Clifton, Bristol</p>
+            <p class="card-price">£650,000</p>
+            <div class="card-meta">
+              <span>4 bed</span>
+              <span>2 bath</span>
+              <span>2,100 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>4 Bedrooms</li>
+              <li>2 Bathrooms</li>
+              <li>2,100 sq ft</li>
+              <li>South-facing Garden</li>
+              <li>Off-street Parking</li>
+            </ul>
+            <p>
+              Elegant Victorian townhouse in sought-after Clifton village,
+              recently renovated.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article
+          class="property-card"
+          data-type="apartment"
+          data-price="320000"
+          data-beds="1"
+        >
+          <div class="card-image img-leeds">
+            <div class="card-badge">For Sale</div>
+          </div>
+          <div class="card-preview">
+            <h3>Riverside Apartment</h3>
+            <p class="card-location">Leeds City Centre</p>
+            <p class="card-price">£320,000</p>
+            <div class="card-meta">
+              <span>1 bed</span>
+              <span>1 bath</span>
+              <span>680 sq ft</span>
+            </div>
+            <span class="click-hint">Click to reveal details</span>
+          </div>
+          <div class="card-details">
+            <ul>
+              <li>1 Bedroom</li>
+              <li>1 Bathroom</li>
+              <li>680 sq ft</li>
+              <li>River Views</li>
+              <li>Private Balcony</li>
+            </ul>
+            <p>
+              Modern riverside apartment with stunning water views and private
+              balcony.
+            </p>
+            <a href="contact.html" class="btn-card">Enquire Now</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Shows when no properties match filter -->
+      <div
+        id="noResults"
+        style="display: none; text-align: center; padding: 3rem; color: #6b7280"
+      >
+        <p>No properties match your search.</p>
+      </div>
+    </section>
+    <!-- END PROPERTIES -->
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Can't Find What You're Looking For?</h2>
+        <p>Tell us exactly what you need and we'll find the perfect match.</p>
+        <a href="contact.html" class="btn-primary">Tell Us Your Requirements</a>
+      </div>
+    </section>
+    <!-- END CTA -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-icon">⬡</span>
+          <span class="brand-name">Prime Estates</span>
+          <p>
+            Premium property solutions across the United Kingdom since 2009.
+          </p>
+        </div>
+        <nav class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>0800 000 0000</p>
+          <p>info@primeestates.co.uk</p>
+          <p>1 Example Street, London, EX1 1AA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Prime Estates. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- JavaScript file -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>
